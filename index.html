@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krish Furnishing House | Mobile Tools</title>
+<style>
+:root {
+    --primary:#800000;
+    --gold:#d4af37;
+    --bg:#fdfaf6;
+    --dark:#1c1c1c;
+    --accent:#b30000;
+}
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', sans-serif;
+    background:var(--bg);
+    color:#333;
+}
+header{
+    background:var(--primary);
+    color:var(--gold);
+    text-align:center;
+    padding:20px 10px;
+}
+header h1{
+    margin:0;
+    font-weight:300;
+    letter-spacing:3px;
+    font-size:22px;
+}
+header p{
+    margin-top:5px;
+    font-size:12px;
+    color:#f5deb3;
+}
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    padding:15px;
+}
+.card{
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:12px;
+}
+.card:hover{
+    transform: translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.card h3{
+    margin:8px 0;
+    font-size:14px;
+    color:var(--primary);
+}
+.card p{
+    font-size:11px;
+    color:#555;
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    overflow:auto;
+}
+.modal-content{
+    background:white;
+    border-radius:15px;
+    max-width:95%;
+    width:100%;
+    height:90%;
+    padding:10px;
+    position:relative;
+}
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:24px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#333;
+    z-index:1001;
+}
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:10px;
+}
+footer{
+    text-align:center;
+    font-size:11px;
+    color:#777;
+    padding:15px 0;
+}
+
+/* About & Contact box at bottom */
+.about-contact{
+    background:#fff8e6;
+    padding:15px;
+    border-radius:12px;
+    margin:15px;
+    font-size:12px;
+    line-height:1.5;
+    color:#555;
+}
+.about-contact b{color:var(--primary);}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Krish Furnishing House</h1>
+<p>All Tools Integrated – Tap Card to Open</p>
+</header>
+
+<div class="container">
+<div class="card" onclick="openModal(0)"><h3>Sofa Puffy</h3><p>sofapuffy</p></div>
+<div class="card" onclick="openModal(1)"><h3>Wallpaper</h3><p>wallpaper</p></div>
+<div class="card" onclick="openModal(2)"><h3>bhartiyabaithak</h3><p> bhartiyabaithak</p></div>
+<div class="card" onclick="openModal(3)"><h3>Artificial Grass</h3><p>grass</p></div>
+<div class="card" onclick="openModal(4)"><h3>Bed Back</h3><p>bedback</p></div>
+<div class="card" onclick="openModal(5)"><h3>Blinds</h3><p>blinds</p></div>
+<div class="card" onclick="openModal(6)"><h3>Carpet</h3><p>carpet</p></div>
+<div class="card" onclick="openModal(7)"><h3>curtaintrack</h3><p>curtaintrack</p></div>
+<div class="card" onclick="openModal(8)"><h3>Curtains</h3><p>curtains</p></div>
+<div class="card" onclick="openModal(9)"><h3>Mattress</h3><p>mattress</p></div>
+<div class="card" onclick="openModal(10)"><h3>Sofa Set</h3><p>sofa</p></div>
+<div class="card" onclick="openModal(11)"><h3>Sofa Teapoy</h3><p>sofateapoy</p></div>
+<div class="card" onclick="openModal(12)"><h3>Invoice/Quotation</h3><p>invoicefinal</p></div>
+</div>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal()">&times;</span>
+<iframe id="toolFrame"></iframe>
+</div>
+</div>
+
+<div class="about-contact">
+<b>About Us:</b> Krish Furnishing House provides premium home furnishing solutions including sofas, blinds, curtains, carpets, and baithaks. <br>
+<b>Contact:</b> WhatsApp: +91-9284171723 | Email: info@krishfurnishing.com <br>
+<b>Address:</b> Lalbag Prestige, Manchar-Pune-410503
+</div>
+
+<footer>
+Website created by Ishwari Tambe
+</footer>
+
+<script>
+let tools=[
+'sofapuffy.html',
+'wallpaper.html',
+'bhartiyabaithak.html',
+'artificialgrass.html',
+'bedback.html',
+'blinds.html',
+'carpet.html',
+'curtaintrack.html',
+'curtains.html',
+'mattress.html',
+'sofa.html',
+'sofateapoy.html',
+'invoicefinal.html'
+];
+function openModal(index){
+    let iframe=document.getElementById('toolFrame');
+    iframe.src=tools[index];
+    document.getElementById('modal').style.display='flex';
+}
+function closeModal(){
+    document.getElementById('modal').style.display='none';
+    document.getElementById('toolFrame').src='';
+}
+</script>
+
+</body>
+</html>
